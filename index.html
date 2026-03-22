@@ -624,7 +624,7 @@ function renderDday(){
 function renderMemo(){g("memo-text").textContent=lsGet("memo")||"바탕화면에 메모를 띄울 수 있습니다.\\n설정(우측 상단 톱니바퀴)에서 내용을 입력하세요.";}
 function renderFolders(){
   var folders=lsGetJ(getDKey("folders"),[{name:"긴급 (여기에 아이콘 배치)",size:"XL"},{name:"진행중 업무",size:"L"},{name:"나중에 볼 파일",size:"M"}]);var zone=g("folder-zone");if(!zone)return;
-  var sm={S:{w:"140px",h:"100px"},M:{w:"200px",h:"140px"},L:{w:"280px",h:"180px"},XL:{w:"100%",h:"220px"}}; zone.innerHTML=folders.filter(function(f){return f.name&&f.name.trim();}).map(function(f){var sz=sm[f.size||"M"];return "<div class='folder-box' style='width:"+sz.w+";min-height:"+sz.h+"'><div class='folder-title'>📁 "+f.name+"</div></div>";
+  var sm={S:{w:"140px",h:"100px"},M:{w:"200px",h:"140px"},L:{w:"280px",h:"180px"},XL:{w:"100%",h:"220px"}}; zone.innerHTML=folders.filter(function(f){return f.name&&f.name.trim();}).map(function(f){var sz=sm[f.size||"M"];return "<div class='folder-box' style='width:"+sz.w+";min-height:"+sz.h+"'><div class='folder-title'>📁 "+f.name+"</div></div>";}).join("");
 }
 
 function renderDock() {
