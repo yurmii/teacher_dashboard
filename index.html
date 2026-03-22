@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>선생님 바탕화면 생성기 by 윪T</title>
+<title>선생님 바탕화면 생성기</title>
 <link href="https://fonts.googleapis.com/css2?family=Gmarket+Sans:wght@300;500;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
@@ -300,8 +300,8 @@ var DASH_TEMPLATE = `<!DOCTYPE html>
 [data-theme="8"]{--bg:#000d00;--bg2:#001800;--bg3:#002200;--card:rgba(0,18,0,0.92);--cb:rgba(0,255,70,0.13);--ac:#00ff46;--ac2:#00cc38;--tx:#ccffcc;--tx2:#88ff88;--tx3:#336633;--sh:0 0 20px rgba(0,255,70,0.13);--br:0px;}
 [data-theme="9"]{--bg:#faf6f0;--bg2:#f0e8d8;--bg3:#e8d5b8;--card:rgba(255,252,245,0.93);--cb:rgba(146,64,14,0.14);--ac:#92400e;--ac2:#b45309;--tx:#1c0a00;--tx2:#78350f;--tx3:#b45309;--sh:0 4px 20px rgba(120,53,15,0.11);--br:14px;}
 body{margin:0;padding:0;overflow:hidden;width:100vw;height:100vh;background:var(--bg);color:var(--tx);transition:background .4s,color .4s;font-family:var(--fb),sans-serif;display:flex;align-items:center;justify-content:center;pointer-events:none;}
-.card, .top-btns, .cal-popup, .popup-mega, .cfg-page, .tt-page { pointer-events: auto; }
-.folder-card { pointer-events: none !important; }
+.card, .top-btns, .dock-wrap, .cal-popup, .popup-mega, .cfg-page, .tt-page { pointer-events: auto; }
+.folder-card, .folder-card * { pointer-events: none !important; }
 .folder-card .clbl { pointer-events: auto; }
 .bg-deco{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 [data-theme="1"] .bg-deco::before{content:"";position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(249,168,201,0.32),transparent 70%);top:-200px;right:100px;border-radius:50%}
@@ -801,7 +801,7 @@ function bindEvents(){
 function renderAll(){renderTT();renderEvents();renderDday();renderMemo();renderFolders();renderTodos();renderPopups();renderDock();}
 function init(){applyTheme(theme);applyLayout(layout);applyFonts(theme);bindEvents();tick();renderAll();fetchWeather();fetchMeal();setInterval(tick,1000);setInterval(renderTT,60000);setInterval(fetchWeather,1800000);setInterval(fetchMeal,3600000);}
 init();
-</script>
+${"<"}/script>
 </body>
 </html>`;
 
@@ -873,6 +873,6 @@ function doGen(){
   document.querySelectorAll(".to").forEach(function(btn){btn.addEventListener("click",function(){document.querySelectorAll(".to").forEach(function(b){b.classList.remove("sel");});btn.classList.add("sel");S.theme=parseInt(btn.getAttribute("data-t"));});});
   document.querySelectorAll(".lo").forEach(function(btn){btn.addEventListener("click",function(){document.querySelectorAll(".lo").forEach(function(b){b.classList.remove("sel");});btn.classList.add("sel");S.layout=parseInt(btn.getAttribute("data-layout"));});});
 })();
-${"<"}/script>
+</script>
 </body>
 </html>
