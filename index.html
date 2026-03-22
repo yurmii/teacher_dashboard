@@ -11,12 +11,12 @@
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#0c0e14;--card:#1a1d2a;--card2:#232638;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--acc:#8b5cf6;--acc2:#c4b5fd;--green:#10b981;--blue:#38bdf8;--orange:#fb923c;--text:#f1f5f9;--text2:#94a3b8;--text3:#475569;--r:16px;--shadow:0 4px 24px rgba(0,0,0,0.4)}
 html{scroll-behavior:smooth}
-@font-face { font-family: 'ImHyeMinBold'; src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2') format('woff2'); font-weight: 700; }
-@font-face { font-family: 'ImHyeMinRegular'; src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Regular.woff2') format('woff2'); font-weight: 400; }
-
-body{font-family:"ImHyeMinRegular", "Noto Sans KR", sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-
-.hdr h1{font-family:"ImHyeMinBold", sans-serif;font-size:44px;font-weight:700;line-height:1.2;background:linear-gradient(135deg,#fff 0%,var(--acc2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px}
+body{font-family:"Noto Sans KR",sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse 900px 500px at 10% 15%,rgba(139,92,246,0.06),transparent 60%),radial-gradient(ellipse 600px 400px at 90% 85%,rgba(16,185,129,0.05),transparent 60%);pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:64px 24px 120px}
+.hdr{text-align:center;margin-bottom:72px}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.25);border-radius:100px;padding:6px 18px;font-size:11px;color:var(--acc2);letter-spacing:2px;font-family:"Space Mono",monospace;margin-bottom:22px}
+.hdr h1{font-family:"Gmarket Sans",sans-serif;font-size:44px;font-weight:700;line-height:1.2;background:linear-gradient(135deg,#fff 0%,var(--acc2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px}
 .hdr p{font-size:15px;color:var(--text2);line-height:1.8}
 .step-ind{display:flex;align-items:center;justify-content:center;margin-bottom:52px;position:sticky;top:0;z-index:100;padding:18px 0;background:linear-gradient(to bottom,var(--bg) 75%,transparent)}
 .sdot{display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer}
@@ -127,7 +127,7 @@ body{font-family:"ImHyeMinRegular", "Noto Sans KR", sans-serif;background:var(--
 <div class="wrap">
   <header class="hdr">
     <div class="badge">✦ TEACHER DASHBOARD GENERATOR v8.4 (이모지 버그 픽스 완료)</div>
-    <h1>나만의 교실 바탕화면<br>by 윪T👩🏻‍🏫🚀</h1>
+    <h1>나만의 교실 바탕화면<br>by 유림T</h1>
     <p>파일 업로드 한 번으로 AI가 시간표·학사일정은 물론<br>명렬표와 내선번호까지 자동 업데이트되는 바탕화면을 만들어드려요.</p>
   </header>
 
@@ -291,8 +291,6 @@ var DASH_TEMPLATE = `<!DOCTYPE html>
 <title>선생님 바탕화면 대시보드</title>
 <link href="https://fonts.googleapis.com/css2?family=Gmarket+Sans:wght@300;500;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Do+Hyeon&family=Nanum+Gothic:wght@400;700;800&family=Black+Han+Sans&family=Nanum+Myeongjo:wght@400;700;800&family=Space+Mono:wght@400;700&family=Jua&display=swap" rel="stylesheet">
 <style>
-@font-face { font-family: 'ImHyeMin'; src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Regular.woff2') format('woff2'); font-weight: 400; }
-@font-face { font-family: 'ImHyeMin'; src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2') format('woff2'); font-weight: 700; }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box} :root{--tr:all 0.3s cubic-bezier(.4,0,.2,1)}
 [data-theme="1"]{--bg:#fff0f3;--bg2:#ffe4eb;--bg3:#ffd6e2;--card:rgba(255,255,255,0.83);--cb:rgba(255,160,180,0.28);--ac:#e8547a;--ac2:#f9a8c9;--tx:#3d1a24;--tx2:#9b5a6a;--tx3:#c48a96;--sh:0 8px 32px rgba(232,84,122,0.13);--br:22px;}
 [data-theme="2"]{--bg:#0d0f18;--bg2:#161927;--bg3:#1e2235;--card:rgba(22,25,39,0.9);--cb:rgba(99,102,241,0.2);--ac:#818cf8;--ac2:#6366f1;--tx:#e2e8f0;--tx2:#94a3b8;--tx3:#64748b;--sh:0 8px 32px rgba(99,102,241,0.2);--br:20px;}
@@ -511,7 +509,7 @@ var DEFAULT_EVENTS = /*EV*/[{date:curYear+"-03-03",title:"입학식/개학식"},
 var DEFAULT_PERIODS=[{label:"1교시",start:"08:50",end:"09:35"},{label:"2교시",start:"09:45",end:"10:30"},{label:"3교시",start:"10:40",end:"11:25"},{label:"4교시",start:"11:35",end:"12:20"},{label:"점심",start:"12:20",end:"13:20"},{label:"5교시",start:"13:20",end:"14:05"},{label:"6교시",start:"14:15",end:"15:00"},{label:"7교시",start:"15:10",end:"15:55"}];
 var SUBJ_DEF={국어:"#FF8FAB",수학:"#7EC8E3",영어:"#FFB347",과학:"#90EE90",체육:"#FF7F7F",음악:"#DDA0DD",미술:"#FFA07A",사회:"#87CEEB",도덕:"#98FB98",창체:"#F0E68C"};
 var WD=["월","화","수","목","금"],DAYS=["일","월","화","수","목","금","토"];
-var FONTS=[{name:"Gmarket Sans",label:"지마켓산스",preview:"바탕화면"},{name:"Noto Sans KR",label:"노토산스",preview:"바탕화면"},{name:"Nanum Gothic",label:"나눔고딕",preview:"바탕화면"},{name:"Do Hyeon",label:"도현체",preview:"바탕화면"},{name:"Black Han Sans",label:"블랙한산스",preview:"바탕화면"},{name:"Nanum Myeongjo",label:"나눔명조",preview:"바탕화면"},{name:"Jua",label:"주아체",preview:"바탕화면"},{name:"Space Mono",label:"Space Mono",preview:"12:34"},{name:"ImHyeMin",label:"IM혜민체",preview:"바탕화면"}];
+var FONTS=[{name:"Gmarket Sans",label:"지마켓산스",preview:"바탕화면"},{name:"Noto Sans KR",label:"노토산스",preview:"바탕화면"},{name:"Nanum Gothic",label:"나눔고딕",preview:"바탕화면"},{name:"Do Hyeon",label:"도현체",preview:"바탕화면"},{name:"Black Han Sans",label:"블랙한산스",preview:"바탕화면"},{name:"Nanum Myeongjo",label:"나눔명조",preview:"바탕화면"},{name:"Jua",label:"주아체",preview:"바탕화면"},{name:"Space Mono",label:"Space Mono",preview:"12:34"}];
 var THEME_FONTS={1:{head:"Gmarket Sans",body:"Noto Sans KR"},2:{head:"Do Hyeon",body:"Noto Sans KR"},3:{head:"Nanum Gothic",body:"Nanum Gothic"},4:{head:"Black Han Sans",body:"Noto Sans KR"},5:{head:"Nanum Myeongjo",body:"Nanum Myeongjo"},6:{head:"Jua",body:"Jua"},7:{head:"Do Hyeon",body:"Noto Sans KR"},8:{head:"Space Mono",body:"Noto Sans KR"},9:{head:"Nanum Myeongjo",body:"Nanum Myeongjo"}};
 
 var theme=parseInt(lsGet("theme")||"/*TN*/1"), layout=parseInt(lsGet("layout")||"/*LN*/1"), evRange="week",evOff=0,ttEditDay="월",ttEditing={}, mealOff=0; 
